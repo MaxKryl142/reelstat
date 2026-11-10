@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ReelStat">
+<meta name="theme-color" content="#0e0f13">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>ReelStat — статистика недели</title>
+<style>
+:root{
+  --bg:#0e0f13;--card:#181a21;--card2:#20232c;--line:#2a2e39;
+  --text:#f2f3f7;--muted:#9097a6;--good:#3ddc97;--bad:#ff6b6b;
+  --accent:#ff7a45;--accent2:#c43dff;
+  --grad:linear-gradient(135deg,#ff7a45,#e8457c 55%,#8a3dff);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);
+  font:15px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) calc(env(safe-area-inset-bottom) + 24px) env(safe-area-inset-left)}
+.wrap{max-width:560px;margin:0 auto;padding:12px 16px}
+header{display:flex;align-items:center;justify-content:space-between;padding:8px 0 4px}
+.brand{display:flex;align-items:center;gap:10px}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--grad);flex:none;object-fit:cover}
+.brand b{font-size:17px;display:block}
+.brand small{color:var(--muted);font-size:12.5px}
+.iconbtn{background:var(--card);border:1px solid var(--line);color:var(--text);
+  width:38px;height:38px;border-radius:12px;font-size:18px;display:grid;place-items:center;cursor:pointer}
+.week{display:flex;align-items:center;justify-content:space-between;margin:14px 0 12px;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px}
+.week button{background:none;border:0;color:var(--text);font-size:22px;width:44px;height:40px;border-radius:12px;cursor:pointer}
+.week button:disabled{opacity:.25}
+.week .lbl{text-align:center}
+.week .lbl b{display:block;font-size:15.5px}
+.week .lbl small{color:var(--muted);font-size:12px}
+.seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px;margin-bottom:14px}
+.seg button{flex:1;background:none;border:0;color:var(--muted);padding:8px 4px;border-radius:9px;font-size:13.5px;font-weight:600;cursor:pointer}
+.seg button.on{background:var(--card2);color:var(--text)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.kpi.big{grid-column:1/-1;background:var(--grad);border:0}
+.kpi .k{color:var(--muted);font-size:12.5px}
+.kpi.big .k{color:rgba(255,255,255,.85)}
+.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.3px;margin-top:2px}
+.kpi.big .v{font-size:34px}
+.delta{font-size:12.5px;font-weight:600;margin-top:2px}
+.up{color:var(--good)}.down{color:var(--bad)}.flat{color:var(--muted)}
+.kpi.big .delta{color:#fff;opacity:.9}
+h2{font-size:17px;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .n{color:var(--muted);font-weight:500;font-size:14px}
+.reel{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:10px;text-decoration:none;color:inherit}
+.thumb{width:72px;height:104px;border-radius:10px;flex:none;background:var(--card2) center/cover no-repeat;position:relative;overflow:hidden}
+.thumb .rank{position:absolute;left:5px;top:5px;background:rgba(0,0,0,.65);font-weight:700;font-size:12px;border-radius:7px;padding:1px 6px}
+.reel .body{flex:1;min-width:0;display:flex;flex-direction:column}
+.cap{font-size:14px;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.date{color:var(--muted);font-size:12px;margin:2px 0 6px}
+.mainv{font-size:20px;font-weight:700}
+.mainv small{font-size:12px;color:var(--muted);font-weight:500;margin-left:4px}
+.stats{display:flex;flex-wrap:wrap;gap:4px 10px;color:var(--muted);font-size:12.5px;margin-top:auto}
+.top .reel{border-color:rgba(61,220,151,.35)}
+.worst .reel{border-color:rgba(255,107,107,.35)}
+.empty,.note{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:16px;color:var(--muted);text-align:center;font-size:14px}
+.note{text-align:left;border-style:solid}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-top:10px}
+summary{padding:14px;font-weight:600;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"›";float:right;color:var(--muted);transition:.2s}
+details[open] summary::after{transform:rotate(90deg)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:8px 10px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
+td:first-child,th:first-child{text-align:left;white-space:normal;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+th{color:var(--muted);font-weight:500}
+.tablewrap{overflow-x:auto}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}
+.btn.primary{background:var(--grad);color:#fff}
+.btn.ghost{background:var(--card);color:var(--text);border:1px solid var(--line)}
+input,textarea{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;font:14px ui-monospace,Menlo,monospace}
+textarea{min-height:110px;resize:vertical}
+.hero{text-align:center;padding:30px 4px 8px}
+.hero .logo{width:72px;height:72px;border-radius:20px;margin:0 auto 14px;background:url(data:image/png;base64,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) center/cover}
+.hero h1{font-size:24px;margin:0 0 6px}
+.hero p{color:var(--muted);margin:0 0 16px}
+ol.steps{padding-left:20px;margin:8px 0;color:#d6d9e2}
+ol.steps li{margin:0 0 10px}
+code{background:var(--card2);padding:1px 5px;border-radius:5px;font-size:12.5px}
+.err{background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.4);color:#ffc9c9;border-radius:14px;padding:12px 14px;font-size:14px;margin:12px 0}
+.loading{text-align:center;color:var(--muted);padding:40px 0}
+.spin{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:s 0.8s linear infinite;margin:0 auto 10px}
+@keyframes s{to{transform:rotate(360deg)}}
+.demo-badge{background:rgba(255,122,69,.15);color:var(--accent);border-radius:8px;padding:2px 8px;font-size:11.5px;font-weight:700;margin-left:6px}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;z-index:10}
+.sheet.on{display:flex}
+.sheet .panel{background:var(--bg);border-top:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-height:92vh;overflow:auto;padding:18px 18px calc(env(safe-area-inset-bottom) + 18px)}
+.panel h3{margin:0 0 12px;font-size:18px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.switch{position:relative;width:48px;height:28px;flex:none}
+.switch input{display:none}
+.switch span{position:absolute;inset:0;background:var(--card2);border-radius:20px;transition:.2s;border:1px solid var(--line)}
+.switch span::after{content:"";position:absolute;width:22px;height:22px;left:2px;top:2px;background:#fff;border-radius:50%;transition:.2s}
+.switch input:checked+span{background:var(--accent)}
+.switch input:checked+span::after{transform:translateX(20px)}
+.install{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,rgba(255,122,69,.16),rgba(138,61,255,.16));border:1px solid rgba(255,122,69,.35);border-radius:16px;padding:12px 14px;margin:10px 0 4px;cursor:pointer}
+.install .ic{font-size:26px}.install b{display:block;font-size:14.5px}.install small{color:var(--muted);font-size:12.5px}
+.install .x{margin-left:auto;background:none;border:0;color:var(--muted);font-size:20px;padding:4px 6px;cursor:pointer}
+.stepcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.stepcard .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--grad);font-weight:700;font-size:13px;margin-right:8px}
+.stepcard h4{margin:0 0 8px;font-size:15.5px;display:flex;align-items:center}
+.stepcard ol{margin:0;padding-left:20px;color:#d6d9e2}.stepcard li{margin-bottom:7px}
+.share-ic{display:inline-block;width:16px;height:18px;vertical-align:-3px;margin:0 2px}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<div class="sheet" id="sheet"><div class="panel" id="panel"></div></div>
+
+<script>
+(() => {
+const API = 'https://graph.instagram.com/v25.0';
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem('rs_'+k); return v===null ? d : JSON.parse(v);}catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('rs_'+k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem('rs_'+k);}catch(e){} }
+};
+const state = {
+  token: LS.get('token', ''),
+  demo: LS.get('demo', false),
+  weekOffset: -1,
+  rankBy: LS.get('rankBy', 'views'),     // views | eng
+  onlyReels: LS.get('onlyReels', true),
+  profile: null,
+  media: null,          // cached media list
+  mediaFrom: null,      // earliest date covered
+  insights: {},         // id -> insights
+  weekCache: {},        // offset -> account metrics
+  error: null
+};
+const $app = document.getElementById('app');
+const nf = new Intl.NumberFormat('ru-RU');
+const fmt = n => (n==null || isNaN(n)) ? '—' : nf.format(Math.round(n));
+const fmtC = n => {
+  if(n==null || isNaN(n)) return '—';
+  const a = Math.abs(n);
+  if(a >= 1e6) return (n/1e6).toFixed(a>=1e7?0:1).replace('.',',')+' млн';
+  if(a >= 1e4) return (n/1e3).toFixed(a>=1e5?0:1).replace('.',',')+' тыс';
+  return nf.format(Math.round(n));
+};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MON = ['янв','февр','мар','апр','мая','июня','июля','авг','сент','окт','нояб','дек'];
+const DOW = ['вс','пн','вт','ср','чт','пт','сб'];
+
+function weekRange(offset){
+  const now = new Date();
+  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const shift = (d.getDay()+6)%7; // Monday = 0
+  const start = new Date(d); start.setDate(d.getDate() - shift + offset*7);
+  const end = new Date(start); end.setDate(start.getDate()+7);
+  return {start, end};
+}
+function weekLabel(offset){
+  const {start, end} = weekRange(offset);
+  const last = new Date(end); last.setDate(end.getDate()-1);
+  const a = start.getDate(), b = last.getDate();
+  const txt = start.getMonth()===last.getMonth()
+    ? `${a}–${b} ${MON[last.getMonth()]}`
+    : `${a} ${MON[start.getMonth()]} – ${b} ${MON[last.getMonth()]}`;
+  const sub = offset===0 ? 'Текущая неделя · сравнение с тем же периодом' : offset===-1 ? 'Прошлая неделя' : `${-offset} нед. назад`;
+  return {txt, sub};
+}
+const unix = d => Math.floor(d.getTime()/1000);
+
+/* ---------- API ---------- */
+class ApiError extends Error { constructor(msg, code){ super(msg); this.code = code; } }
+async function api(path, params={}){
+  const url = new URL(path.startsWith('http') ? path : API + path);
+  if(!url.searchParams.has('access_token')) url.searchParams.set('access_token', state.token);
+  for(const [k,v] of Object.entries(params)) url.searchParams.set(k, v);
+  let res;
+  try { res = await fetch(url.toString()); }
+  catch(e){ throw new ApiError('Нет связи с Instagram. Проверьте интернет. Если вы открыли приложение внутри Claude, оно не сможет загрузить данные: откройте его по своей ссылке GitHub Pages.', 'net'); }
+  const j = await res.json().catch(()=>({}));
+  if(j.error) throw new ApiError(j.error.message || 'Ошибка Instagram', j.error.code);
+  return j;
+}
+async function pool(items, n, fn){
+  const out = []; let i = 0;
+  const workers = Array.from({length: Math.min(n, items.length)}, async () => {
+    while(i < items.length){ const k = i++; try { out[k] = await fn(items[k]); } catch(e){ out[k] = null; } }
+  });
+  await Promise.all(workers); return out;
+}
+
+async function maybeRefreshToken(){
+  const saved = LS.get('tokenAt', 0);
+  const day = 864e5;
+  if(!state.token || state.demo) return;
+  if(Date.now() - saved < 3*day) return;
+  try{
+    const j = await api('https://graph.instagram.com/refresh_access_token', {grant_type:'ig_refresh_token'});
+    if(j.access_token){ state.token = j.access_token; LS.set('token', j.access_token); LS.set('tokenAt', Date.now()); }
+  }catch(e){ /* silent: token may still be valid */ }
+}
+
+async function loadProfile(){
+  state.profile = await api('/me', {fields:'user_id,username,name,profile_picture_url,followers_count,media_count'});
+  LS.set('profile', state.profile);
+}
+
+async function ensureMedia(since){
+  if(state.media && state.mediaFrom && state.mediaFrom <= since) return;
+  const list = [];
+  let next = API + '/me/media?' + new URLSearchParams({
+    fields:'id,caption,media_type,media_product_type,timestamp,permalink,thumbnail_url,media_url,like_count,comments_count',
+    limit:'50', access_token: state.token});
+  let guard = 0;
+  while(next && guard++ < 20){
+    const j = await api(next);
+    for(const m of (j.data||[])) list.push(m);
+    const lastTs = list.length ? new Date(list[list.length-1].timestamp) : null;
+    if(lastTs && lastTs < since) break;
+    next = j.paging && j.paging.next;
+  }
+  state.media = list; state.mediaFrom = since;
+}
+
+const MEDIA_METRICS = ['views','reach','likes','comments','saved','shares','total_interactions'];
+function parseInsights(j){
+  const o = {};
+  for(const d of (j.data||[])){
+    let v = d.values && d.values[0] ? d.values[0].value : (d.total_value ? d.total_value.value : null);
+    o[d.name] = typeof v === 'number' ? v : (v && typeof v==='object' ? Object.values(v).reduce((a,b)=>a+(+b||0),0) : null);
+  }
+  return o;
+}
+async function mediaInsights(m){
+  if(state.insights[m.id] && Date.now() - state.insights[m.id]._at < 10*60e3) return state.insights[m.id];
+  let o;
+  try { o = parseInsights(await api('/'+m.id+'/insights', {metric: MEDIA_METRICS.join(',')})); }
+  catch(e){
+    o = {};
+    const parts = await pool(MEDIA_METRICS, 3, met => api('/'+m.id+'/insights', {metric: met}).then(parseInsights));
+    for(const p of parts) if(p) Object.assign(o, p);
+  }
+  if(o.likes == null) o.likes = m.like_count;
+  if(o.comments == null) o.comments = m.comments_count;
+  o._at = Date.now();
+  state.insights[m.id] = o;
+  return o;
+}
+
+const ACC_METRICS = ['views','reach','accounts_engaged','total_interactions','profile_views','likes','comments','shares','saves','website_clicks'];
+function elapsed(){ const {start} = weekRange(0); return Date.now() - start.getTime(); }
+async function accountWeek(offset, clip){
+  const key = offset + (clip ? 'c' : '');
+  if(state.weekCache[key]) return state.weekCache[key];
+  const {start, end} = weekRange(offset);
+  const nowS = unix(new Date());
+  const endT = clip ? Math.min(unix(end), unix(start) + Math.floor(elapsed()/1000)) : unix(end);
+  const since = unix(start), until = Math.min(endT, nowS);
+  const res = {};
+  await pool(ACC_METRICS, 4, async met => {
+    const j = await api('/me/insights', {metric: met, period:'day', metric_type:'total_value', since, until});
+    const d = (j.data||[])[0];
+    if(d && d.total_value) res[met] = d.total_value.value;
+  });
+  // follows / unfollows
+  try{
+    const j = await api('/me/insights', {metric:'follows_and_unfollows', period:'day', metric_type:'total_value', breakdown:'follow_type', since, until});
+    const d = (j.data||[])[0];
+    const br = d && d.total_value && d.total_value.breakdowns && d.total_value.breakdowns[0];
+    if(br){
+      for(const r of br.results||[]){
+        const t = (r.dimension_values||[])[0];
+        if(t==='FOLLOWER') res.follows = r.value;
+        if(t==='NON_FOLLOWER') res.unfollows = r.value;
+      }
+      res.follows = res.follows||0; res.unfollows = res.unfollows||0;
+    }
+  }catch(e){}
+  if(res.follows == null){
+    try{
+      const j = await api('/me/insights', {metric:'follower_count', period:'day', since, until});
+      const d = (j.data||[])[0];
+      if(d && d.values) res.follows = d.values.reduce((a,b)=>a+(b.value||0),0);
+    }catch(e){}
+  }
+  state.weekCache[key] = res;
+  return res;
+}
+
+/* ---------- DEMO ---------- */
+function rng(seed){ return () => { seed = (seed*16807) % 2147483647; return (seed-1)/2147483646; }; }
+const DEMO_CAPS = ['Утро продуктивного дня ☕','3 ошибки новичков в монтаже','Как я снимаю на iPhone','Закулисье съёмки 🎬','Рецепт за 60 секунд','Отвечаю на ваши вопросы','Прогулка по городу','Лайфхак, который экономит час','До и после ✨','Мой сетап 2026','Реакция на тренд','Неделя в одном ролике'];
+const DEMO_COLORS = [['#ff7a45','#8a3dff'],['#1fd1f9','#b621fe'],['#f7971e','#ffd200'],['#43e97b','#38f9d7'],['#fa709a','#fee140'],['#667eea','#764ba2'],['#f093fb','#f5576c'],['#30cfd0','#330867']];
+function demoWeek(offset){
+  const r = rng(1000 + (offset+100)*7919);
+  const {start} = weekRange(offset);
+  const n = 5 + Math.floor(r()*4);
+  const reels = [];
+  for(let i=0;i<n;i++){
+    const ts = new Date(start.getTime() + r()*6.9*864e5);
+    if(ts > new Date()) continue;
+    const viral = r() < 0.18 ? 6 + r()*10 : 1;
+    const views = Math.round((2500 + r()*14000) * viral);
+    const reach = Math.round(views * (0.55 + r()*0.25));
+    const likes = Math.round(views * (0.03 + r()*0.05));
+    const comments = Math.round(likes * (0.04 + r()*0.08));
+    const saved = Math.round(likes * (0.08 + r()*0.25));
+    const shares = Math.round(likes * (0.05 + r()*0.3));
+    const c = DEMO_COLORS[Math.floor(r()*DEMO_COLORS.length)];
+    reels.push({ id:'d'+offset+'_'+i, caption: DEMO_CAPS[Math.floor(r()*DEMO_CAPS.length)], timestamp: ts.toISOString(),
+      media_product_type:'REELS', permalink:'#', _grad:c,
+      ins:{views,reach,likes,comments,saved,shares,total_interactions:likes+comments+saved+shares}});
+  }
+  const rv = reels.reduce((a,m)=>a+m.ins.views,0);
+  const acc = {
+    views: Math.round(rv*1.35 + 4000 + r()*3000), reach: Math.round(rv*0.62 + 2000),
+    accounts_engaged: Math.round(rv*0.045), total_interactions: reels.reduce((a,m)=>a+m.ins.total_interactions,0) + 120,
+    profile_views: Math.round(rv*0.03), follows: Math.round(rv*0.006 + 20), unfollows: Math.round(8 + r()*25),
+    likes: reels.reduce((a,m)=>a+m.ins.likes,0), comments: reels.reduce((a,m)=>a+m.ins.comments,0),
+    shares: reels.reduce((a,m)=>a+m.ins.shares,0), saves: reels.reduce((a,m)=>a+m.ins.saved,0)
+  };
+  return {reels, acc};
+}
+
+/* ---------- REPORT ---------- */
+async function buildReport(offset){
+  if(state.demo){
+    const cur = demoWeek(offset), prev = demoWeek(offset-1);
+    if(offset === 0){
+      const f = Math.min(1, elapsed()/(7*864e5)), cutoff = weekRange(-1).start.getTime() + elapsed();
+      prev.reels = prev.reels.filter(m => new Date(m.timestamp).getTime() < cutoff);
+      for(const k in prev.acc) prev.acc[k] = Math.round(prev.acc[k]*f);
+    }
+    return {reels: cur.reels, acc: cur.acc, prevAcc: prev.acc, prevReels: prev.reels};
+  }
+  const {start, end} = weekRange(offset);
+  const prevR = weekRange(offset-1);
+  const clip = offset === 0;
+  if(clip) prevR.end = new Date(prevR.start.getTime() + elapsed());
+  await ensureMedia(prevR.start);
+  const inRange = (m, s, e) => { const t = new Date(m.timestamp); return t >= s && t < e; };
+  const filt = m => !state.onlyReels || m.media_product_type === 'REELS';
+  const cur = state.media.filter(m => inRange(m, start, end) && filt(m));
+  const prev = state.media.filter(m => inRange(m, prevR.start, prevR.end) && filt(m));
+  await pool(cur.concat(prev), 4, mediaInsights);
+  cur.forEach(m => m.ins = state.insights[m.id] || {});
+  prev.forEach(m => m.ins = state.insights[m.id] || {});
+  const [acc, prevAcc] = await Promise.all([accountWeek(offset), accountWeek(offset-1, clip)]);
+  return {reels: cur, acc, prevAcc, prevReels: prev};
+}
+
+const eng = i => (i.likes||0)+(i.comments||0)+(i.saved||0)+(i.shares||0);
+const score = m => state.rankBy === 'views' ? (m.ins.views||0) : eng(m.ins);
+
+function delta(cur, prev, inv){
+  if(cur==null || prev==null) return '';
+  if(prev === 0) return cur > 0 ? '<div class="delta up">▲ новое</div>' : '<div class="delta flat">= без изменений</div>';
+  const p = (cur - prev) / prev * 100;
+  if(Math.abs(p) < 0.5) return '<div class="delta flat">= без изменений</div>';
+  return `<div class="delta ${(p>0)!==!!inv?'up':'down'}">${p>0?'▲':'▼'} ${Math.abs(p).toFixed(0)}%</div>`;
+}
+function kpi(label, cur, prev, big, inv){
+  return `<div class="kpi${big?' big':''}"><div class="k">${label}</div><div class="v">${big?fmt(cur):fmtC(cur)}</div>${delta(cur,prev,inv)}</div>`;
+}
+function reelCard(m, rank){
+  const i = m.ins || {};
+  const t = new Date(m.timestamp);
+  const date = `${DOW[t.getDay()]}, ${t.getDate()} ${MON[t.getMonth()]}, ${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
+  const img = m.thumbnail_url || (m.media_type==='IMAGE' ? m.media_url : null);
+  const bg = img ? `background-image:url('${esc(img)}')` : (m._grad ? `background:linear-gradient(160deg,${m._grad[0]},${m._grad[1]})` : '');
+  const cap = (m.caption||'Без подписи').split('\n')[0];
+  const main = state.rankBy==='views'
+    ? `${fmt(i.views)}<small>просмотров</small>`
+    : `${fmt(eng(i))}<small>реакций</small>`;
+  const er = i.reach ? (eng(i)/i.reach*100).toFixed(1).replace('.',',')+'%' : '—';
+  const href = m.permalink && m.permalink !== '#' ? `href="${esc(m.permalink)}" target="_blank" rel="noopener"` : '';
+  return `<a class="reel" ${href}>
+    <div class="thumb" style="${bg}">${rank?`<span class="rank">${rank}</span>`:''}</div>
+    <div class="body">
+      <div class="cap">${esc(cap)}</div>
+      <div class="date">${date}</div>
+      <div class="mainv">${main}</div>
+      <div class="stats">
+        ${state.rankBy==='views' ? '' : `<span>👁 ${fmtC(i.views)}</span>`}
+        <span>👥 ${fmtC(i.reach)}</span><span>❤️ ${fmtC(i.likes)}</span><span>💬 ${fmtC(i.comments)}</span>
+        <span>🔖 ${fmtC(i.saved)}</span><span>↗️ ${fmtC(i.shares)}</span><span>ER ${er}</span>
+      </div>
+    </div></a>`;
+}
+
+function renderHeader(){
+  const p = state.profile || {};
+  const av = p.profile_picture_url ? `<img class="avatar" src="${esc(p.profile_picture_url)}" alt="">` : '<div class="avatar"></div>';
+  return `<header>
+    <div class="brand">${av}<div><b>${state.demo ? 'Демо-аккаунт' : '@'+esc(p.username||'…')}${state.demo?'<span class="demo-badge">ДЕМО</span>':''}</b>
+    <small>${p.followers_count!=null ? fmt(p.followers_count)+' подписчиков' : (state.demo ? '12 480 подписчиков' : '')}</small></div></div>
+    <div style="display:flex;gap:8px"><button class="iconbtn" id="refresh" aria-label="Обновить">↻</button><button class="iconbtn" id="settings" aria-label="Настройки">⚙︎</button></div>
+  </header>`;
+}
+
+async function renderReport(){
+  const wl = weekLabel(state.weekOffset);
+  $app.innerHTML = renderHeader() + installBanner() + `
+    <div class="week"><button id="prev">‹</button><div class="lbl"><b>${wl.txt}</b><small>${wl.sub}</small></div><button id="next" ${state.weekOffset>=0?'disabled':''}>›</button></div>
+    <div class="seg"><button data-r="views" class="${state.rankBy==='views'?'on':''}">По просмотрам</button><button data-r="eng" class="${state.rankBy==='eng'?'on':''}">По вовлечённости</button></div>
+    <div id="body"><div class="loading"><div class="spin"></div>Считаю статистику…</div></div>
+    <div class="foot">${state.weekOffset===0?'Неделя ещё идёт: % считаются к тем же дням прошлой недели.<br>':'% — изменение к предыдущей неделе.<br>'}${state.demo ? 'Это демо с выдуманными цифрами. Подключите аккаунт в ⚙︎' : 'Данные Instagram обновляются с задержкой до 48 ч'}</div>`;
+  bindHeader(); bindInstall();
+  document.getElementById('prev').onclick = () => { state.weekOffset--; renderReport(); };
+  document.getElementById('next').onclick = () => { if(state.weekOffset<0){ state.weekOffset++; renderReport(); } };
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { state.rankBy = b.dataset.r; LS.set('rankBy', state.rankBy); renderReport(); });
+
+  const body = document.getElementById('body');
+  const myOffset = state.weekOffset;
+  let rep;
+  try{
+    if(!state.demo && !state.profile) await loadProfile().then(()=>{ const h=document.querySelector('header'); if(h){ h.outerHTML = renderHeader(); bindHeader(); }});
+    rep = await buildReport(myOffset);
+  }catch(e){
+    if(myOffset !== state.weekOffset) return;
+    body.innerHTML = `<div class="err"><b>Не получилось загрузить данные.</b><br>${esc(e.message)}${e.code===190?'<br><br>Токен устарел или неверный. Откройте ⚙︎ и вставьте новый.':''}</div>`;
+    return;
+  }
+  if(myOffset !== state.weekOffset) return;
+
+  const {reels, acc, prevAcc, prevReels} = rep;
+  const sorted = reels.slice().sort((a,b) => score(b) - score(a));
+  const top = sorted.slice(0, 3);
+  const rest = sorted.slice(3);
+  const worst = rest.slice(-2).reverse().reverse(); // keep order: worse last
+  const worstSorted = sorted.length > 3 ? sorted.slice(Math.max(3, sorted.length-2)).sort((a,b)=>score(a)-score(b)) : [];
+  const sum = (arr, f) => arr.reduce((a,m)=>a+(f(m.ins||{})||0),0);
+  const rViews = sum(reels, i=>i.views), pViews = sum(prevReels||[], i=>i.views);
+  const avg = reels.length ? rViews/reels.length : null;
+  const pAvg = prevReels && prevReels.length ? pViews/prevReels.length : null;
+  const net = (acc.follows!=null) ? acc.follows - (acc.unfollows||0) : null;
+  const pNet = (prevAcc && prevAcc.follows!=null) ? prevAcc.follows - (prevAcc.unfollows||0) : null;
+  const P = prevAcc || {};
+  const kind = state.onlyReels ? 'роликов' : 'публикаций';
+
+  let html = `<div class="grid">
+    ${kpi('Просмотры за неделю (весь аккаунт)', acc.views, P.views, true)}
+    ${kpi('Охват (зрители)', acc.reach, P.reach)}
+    ${kpi('Прирост подписчиков', net, pNet)}
+    ${kpi('Новые подписки', acc.follows, P.follows)}
+    ${kpi('Отписки', acc.unfollows, P.unfollows, false, true)}
+    ${kpi('Вовлечённые аккаунты', acc.accounts_engaged, P.accounts_engaged)}
+    ${kpi('Визиты профиля', acc.profile_views, P.profile_views)}
+    ${kpi('Лайки', acc.likes, P.likes)}
+    ${kpi('Комментарии', acc.comments, P.comments)}
+    ${kpi('Сохранения', acc.saves, P.saves)}
+    ${kpi('Репосты', acc.shares, P.shares)}
+    ${kpi(`Опубликовано ${kind}`, reels.length, prevReels ? prevReels.length : null)}
+    ${kpi(`Средн. просмотры ${state.onlyReels?'ролика':'публикации'}`, avg, pAvg)}
+  </div>`;
+
+  if(!reels.length){
+    html += `<h2>Ролики недели</h2><div class="empty">На этой неделе ${kind} не было 🤷‍♂️<br>Листайте ‹ на прошлые недели.</div>`;
+  } else {
+    html += `<div class="top"><h2>🏆 Топ-${top.length} недели <span class="n">${state.rankBy==='views'?'по просмотрам':'по реакциям'}</span></h2>${top.map((m,k)=>reelCard(m, '#'+(k+1))).join('')}</div>`;
+    if(worstSorted.length){
+      html += `<div class="worst"><h2>👎 ${worstSorted.length===1?'Худший':'2 худших'} <span class="n">из ${reels.length}</span></h2>${worstSorted.map((m,k)=>reelCard(m, k===0?'хуже всех':'')).join('')}</div>`;
+    } else {
+      html += `<div class="note" style="margin-top:14px">Чтобы выделить худшие ролики, нужно больше 3 ${kind} за неделю. Сейчас ${reels.length}.</div>`;
+    }
+    html += `<details><summary>Все ${kind} недели (${reels.length})</summary><div class="tablewrap"><table>
+      <tr><th>Ролик</th><th>👁</th><th>👥</th><th>❤️</th><th>🔖</th><th>↗️</th></tr>
+      ${sorted.map(m=>`<tr><td>${esc((m.caption||'Без подписи').split('\n')[0].slice(0,40))}</td><td>${fmtC(m.ins.views)}</td><td>${fmtC(m.ins.reach)}</td><td>${fmtC(m.ins.likes)}</td><td>${fmtC(m.ins.saved)}</td><td>${fmtC(m.ins.shares)}</td></tr>`).join('')}
+      <tr><td><b>Итого</b></td><td><b>${fmtC(rViews)}</b></td><td><b>${fmtC(sum(reels,i=>i.reach))}</b></td><td><b>${fmtC(sum(reels,i=>i.likes))}</b></td><td><b>${fmtC(sum(reels,i=>i.saved))}</b></td><td><b>${fmtC(sum(reels,i=>i.shares))}</b></td></tr>
+    </table></div></details>
+    <button class="btn ghost" id="copy">📋 Скопировать отчёт текстом</button>`;
+  }
+  body.innerHTML = html;
+  const cp = document.getElementById('copy');
+  if(cp) cp.onclick = async () => {
+    const line = (m,k) => `${k}. ${(m.caption||'Без подписи').split('\n')[0].slice(0,50)} — ${fmt(m.ins.views)} просм.`;
+    const txt = [`📊 Отчёт за ${wl.txt}`, ``,
+      `👁 Просмотры: ${fmt(acc.views)}`, `👥 Охват: ${fmt(acc.reach)}`,
+      `➕ Подписки: ${fmt(acc.follows)}  ➖ Отписки: ${fmt(acc.unfollows)}  = ${net>=0?'+':''}${fmt(net)}`,
+      `🎬 ${kind[0].toUpperCase()+kind.slice(1)}: ${reels.length}`, ``,
+      `🏆 Топ:`, ...top.map((m,k)=>line(m,k+1)),
+      ...(worstSorted.length ? [``, `👎 Худшие:`, ...worstSorted.map((m,k)=>line(m,k+1))] : [])].join('\n');
+    try{ await navigator.clipboard.writeText(txt); cp.textContent = '✅ Скопировано'; }
+    catch(e){ cp.textContent = 'Не удалось скопировать'; }
+    setTimeout(()=>cp.textContent='📋 Скопировать отчёт текстом', 1800);
+  };
+}
+
+function bindHeader(){
+  const s = document.getElementById('settings'); if(s) s.onclick = openSettings;
+  const r = document.getElementById('refresh'); if(r) r.onclick = () => {
+    state.media = null; state.mediaFrom = null; state.insights = {}; state.weekCache = {}; state.profile = null; renderReport();
+  };
+}
+
+/* ---------- INSTALL ON IPHONE ---------- */
+const SHARE_SVG = '<svg class="share-ic" viewBox="0 0 16 20" fill="none" stroke="#4da3ff" stroke-width="1.6"><path d="M8 13V1M4 5l4-4 4 4"/><path d="M5 8H2v11h12V8h-3"/></svg>';
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const isStandalone = window.navigator.standalone === true || (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
+const inFrame = (() => { try { return window.top !== window; } catch(e){ return true; } })();
+const onOwnSite = !inFrame && /^https?:$/.test(location.protocol) && location.hostname !== '127.0.0.1' && location.hostname !== 'localhost';
+function installBanner(){
+  if(isStandalone || LS.get('hideInstall', false)) return '';
+  const t = onOwnSite && isIOS ? 'Установить на iPhone' : 'Как поставить на iPhone';
+  const sub = onOwnSite && isIOS ? 'Иконка на экране «Домой», как у приложения' : 'Пошаговая инструкция, ~10 минут';
+  return `<div class="install" id="installBtn"><div class="ic">📲</div><div><b>${t}</b><small>${sub}</small></div><button class="x" id="installX" aria-label="Скрыть">×</button></div>`;
+}
+function bindInstall(){
+  const b = document.getElementById('installBtn'); if(b) b.onclick = e => { if(e.target.id==='installX') return; openInstall(); };
+  const x = document.getElementById('installX'); if(x) x.onclick = e => { e.stopPropagation(); LS.set('hideInstall', true); b.remove(); };
+}
+function openInstall(){
+  const p = document.getElementById('panel');
+  const onlyHome = onOwnSite;
+  const home = `<div class="stepcard"><h4><span class="num">${onlyHome?1:3}</span>Добавьте на экран «Домой»</h4><ol>
+      <li>Откройте ${onlyHome?'эту страницу':'свою ссылку'} именно в <b>Safari</b>, не во встроенном браузере Telegram или Instagram.</li>
+      <li>Нажмите кнопку «Поделиться» ${SHARE_SVG} внизу экрана (в новых iOS она может быть в меню «•••»).</li>
+      <li>Пролистайте вниз и выберите <b>«На экран „Домой“»</b>.</li>
+      <li>Нажмите <b>«Добавить»</b>. На экране появится иконка ReelStat.</li>
+      <li>Запускайте приложение с иконки: оно откроется на весь экран, без адресной строки.</li></ol></div>`;
+  const host = `
+    <div class="note" style="margin-bottom:10px;font-size:13.5px">iPhone не ставит программы из скачанных файлов, только из App Store. Поэтому ReelStat устанавливается как веб-приложение: вы один раз бесплатно размещаете его на GitHub и добавляете на экран «Домой». Работает оно как обычное приложение.</div>
+    <div class="stepcard"><h4><span class="num">1</span>Сохраните файл приложения</h4><ol>
+      <li>В чате с Claude нажмите на файл <code>index.html</code>.</li>
+      <li>Нажмите «Поделиться» ${SHARE_SVG} → <b>«Сохранить в Файлы»</b>.</li></ol></div>
+    <div class="stepcard"><h4><span class="num">2</span>Разместите его на GitHub (бесплатно)</h4><ol>
+      <li>В Safari откройте <b>github.com</b> и зарегистрируйтесь.</li>
+      <li>Нажмите <b>«+» → New repository</b>. Название: <code>reelstat</code>, тип <b>Public</b> → <b>Create repository</b>.</li>
+      <li>Нажмите ссылку <b>uploading an existing file</b>, выберите <code>index.html</code> из «Файлов» → <b>Commit changes</b>.</li>
+      <li>Откройте <b>Settings → Pages</b>. В «Branch» выберите <code>main</code> → <b>Save</b>.<br><small style="color:var(--muted)">Не видно Settings? Нажмите «аА» в адресной строке → «Запрос настольного веб-сайта».</small></li>
+      <li>Через 1–2 минуты приложение откроется по адресу <code>ваш-ник.github.io/reelstat</code>.</li></ol></div>`;
+  p.innerHTML = `<h3>📲 Установка на iPhone</h3>${onlyHome ? '' : host}${home}
+    <div class="stepcard"><h4><span class="num">${onlyHome?2:4}</span>Подключите Instagram</h4><ol>
+      <li>Откройте приложение с иконки, вставьте токен Instagram (инструкция есть на первом экране) и нажмите «Подключить».</li>
+      <li>Токен вставляется один раз, приложение его запомнит.</li></ol></div>
+    <button class="btn ghost" id="closeI">Понятно</button>`;
+  document.getElementById('sheet').classList.add('on');
+  document.getElementById('closeI').onclick = () => closeSheet();
+}
+
+/* ---------- SETTINGS / ONBOARDING ---------- */
+const HELP = `
+<ol class="steps">
+  <li>В Instagram: <b>Настройки → Тип аккаунта и инструменты</b> → переключитесь на <b>профессиональный</b> аккаунт («Автор» или «Бизнес»). Это бесплатно.</li>
+  <li>Откройте <b>developers.facebook.com</b>, войдите и нажмите <b>Мои приложения → Создать приложение</b>. В сценарии выберите <b>«Управление сообщениями и контентом в Instagram»</b> (Instagram API).</li>
+  <li>В приложении откройте <b>Instagram → API setup with Instagram login</b>. В шаге <b>«Generate access tokens»</b> нажмите <b>Add account</b> и войдите в свой Instagram.</li>
+  <li>Если просит тестировщика: <b>App roles → Roles → Instagram testers</b> → добавьте свой ник, потом в Instagram примите приглашение (Настройки → Приложения и сайты → Приглашения тестировщика).</li>
+  <li>Нажмите <b>Generate token</b> рядом с аккаунтом, скопируйте токен (длинная строка, начинается с <code>IG</code>) и вставьте сюда.</li>
+</ol>
+<div class="note" style="font-size:13px">🔒 Токен хранится только на этом телефоне, в браузере. Он действует 60 дней, приложение само продлевает его, если открывать хотя бы раз в пару недель.</div>`;
+
+function onboarding(){
+  $app.innerHTML = `<div class="hero"><div class="logo"></div><h1>ReelStat</h1><p>Лучшие и худшие ролики недели, просмотры, охват и подписки — в одном экране.</p></div>
+    ${isStandalone ? '' : '<div class="install" id="installBtn"><div class="ic">📲</div><div><b>Как поставить на iPhone</b><small>Пошаговая инструкция</small></div></div>'}
+    <div class="note"><b>Подключение Instagram</b>${HELP}</div>
+    <div style="margin-top:12px"><textarea id="tok" placeholder="Вставьте токен сюда"></textarea></div>
+    <div id="msg"></div>
+    <button class="btn primary" id="save">Подключить</button>
+    <button class="btn ghost" id="demo">Посмотреть демо</button>`;
+  document.getElementById('demo').onclick = () => { state.demo = true; LS.set('demo', true); renderReport(); };
+  bindInstall();
+  document.getElementById('save').onclick = () => saveToken(document.getElementById('tok').value, document.getElementById('msg'));
+}
+async function saveToken(raw, msgEl){
+  const t = (raw||'').trim().replace(/\s+/g,'');
+  if(t.length < 30){ msgEl.innerHTML = '<div class="err">Похоже, это не токен — он должен быть длинной строкой.</div>'; return; }
+  msgEl.innerHTML = '<div class="loading" style="padding:16px 0"><div class="spin"></div>Проверяю…</div>';
+  const old = state.token; state.token = t;
+  try{
+    await loadProfile();
+    LS.set('token', t); LS.set('tokenAt', Date.now()); state.demo = false; LS.set('demo', false);
+    state.media = null; state.insights = {}; state.weekCache = {};
+    closeSheet(); renderReport();
+  }catch(e){
+    state.token = old;
+    msgEl.innerHTML = `<div class="err">${esc(e.message)}</div>`;
+  }
+}
+function openSettings(){
+  const p = document.getElementById('panel');
+  p.innerHTML = `<h3>Настройки</h3>
+    <div class="row"><div>Только Reels<br><small style="color:var(--muted)">Выключите, чтобы учитывать и фото/карусели</small></div>
+      <label class="switch"><input type="checkbox" id="onlyReels" ${state.onlyReels?'checked':''}><span></span></label></div>
+    <div class="row" style="display:block"><div style="margin-bottom:8px"><b>${state.token && !state.demo ? 'Аккаунт подключён' : 'Подключить Instagram'}</b></div>
+      <textarea id="tok2" placeholder="${state.token?'Вставьте новый токен, чтобы заменить':'Вставьте токен'}"></textarea><div id="msg2"></div>
+      <button class="btn primary" id="save2">Сохранить токен</button>
+      <details style="margin-top:10px"><summary>Как получить токен</summary><div style="padding:0 14px 14px">${HELP}</div></details>
+    </div>
+    <button class="btn ghost" id="inst2">📲 Как установить на iPhone</button>
+    ${state.demo ? '' : '<button class="btn ghost" id="demo2">Открыть демо</button>'}
+    ${state.token ? '<button class="btn ghost" id="logout" style="color:var(--bad)">Отключить аккаунт</button>' : ''}
+    <button class="btn ghost" id="close">Закрыть</button>`;
+  document.getElementById('sheet').classList.add('on');
+  document.getElementById('onlyReels').onchange = e => { state.onlyReels = e.target.checked; LS.set('onlyReels', state.onlyReels); };
+  document.getElementById('save2').onclick = () => saveToken(document.getElementById('tok2').value, document.getElementById('msg2'));
+  document.getElementById('inst2').onclick = () => { LS.set('hideInstall', false); openInstall(); };
+  const d2 = document.getElementById('demo2'); if(d2) d2.onclick = () => { state.demo = true; LS.set('demo', true); closeSheet(); renderReport(); };
+  const lo = document.getElementById('logout'); if(lo) lo.onclick = () => {
+    LS.del('token'); LS.del('profile'); state.token=''; state.profile=null; state.demo=false; LS.set('demo', false); closeSheet(); onboarding(); };
+  document.getElementById('close').onclick = () => { closeSheet(); renderReport(); };
+}
+function closeSheet(){ document.getElementById('sheet').classList.remove('on'); }
+document.getElementById('sheet').addEventListener('click', e => { if(e.target.id === 'sheet'){ closeSheet(); renderReport(); } });
+
+/* ---------- START ---------- */
+(async function start(){
+  if(state.demo){ renderReport(); return; }
+  if(!state.token){ onboarding(); return; }
+  state.profile = LS.get('profile', null);
+  await maybeRefreshToken();
+  renderReport();
+})();
+})();
+</script>
+</body>
+</html>
